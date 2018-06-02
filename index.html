@@ -42,9 +42,9 @@
   <amp-web-push
     id="amp-web-push"
     layout="nodisplay"
-    helper-iframe-url="https://example.com/helper-iframe.html"
-    permission-dialog-url="https://example.com/permission-dialog.html"
-    service-worker-url="https://example.com/service-worker.js"
+    helper-iframe-url="./helper-iframe.html"
+    permission-dialog-url="./permission-dialog.html"
+    service-worker-url="./sw.js"
   ></amp-web-push>
 
   <amp-web-push-widget visibility="unsubscribed" layout="fixed" width="250" height="80">
@@ -66,5 +66,10 @@
     Praesent pretium tincidunt lectus sit amet semper. Sed egestas vulputate
     ultricies. Nunc vestibulum porta ante sed iaculis.
   </p>
+  <amp-install-serviceworker
+  src="./sw.js"
+  layout="nodisplay"
+  data-iframe-src="https://8pockets.github.io/ampwa-notification/sw.html">
+  </amp-install-serviceworker>
 </body>
 </html>
