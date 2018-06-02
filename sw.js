@@ -13,6 +13,21 @@
 
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js");
 
+self.addEventListener('push', (event) => {
+    event.waitUntil(
+        self.registration.showNotification('お知らせ', {
+            body: event.data.text(),
+            icon: 'https://8pockets.github.io/ampwa-notification/icon.png'
+        })
+    );
+});
+
+self.addEventListener('notificationclick', (event) => {
+    clients.openWindow('https://yahoo.co.jp');
+
+    event.notification.close();
+});
+
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
  * requests for URLs in the manifest.
